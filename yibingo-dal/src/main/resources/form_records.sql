@@ -1,0 +1,3 @@
+INSERT INTO `form_records` (`id`, `create_time`, `update_time`, `form_id`, `user_id`, `status`) VALUES ('1526100081148641282', '2022-05-16 15:19:48', '2022-05-16 15:19:48', '1526100079022129154', '4', 0);
+INSERT INTO `form_records` (`id`, `create_time`, `update_time`, `form_id`, `user_id`, `status`) VALUES ('1526100081215750146', '2022-05-16 15:19:48', '2022-05-16 15:19:48', '1526100079022129154', '2', 0);
+INSERT INTO `form_records` (`id`, `create_time`, `update_time`, `form_id`, `user_id`, `status`) VALUES ('1526100081215750147', '2022-05-16 15:19:48', '2022-05-16 15:19:48', '1526100079022129154', '1', 0);

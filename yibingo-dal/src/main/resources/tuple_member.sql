@@ -1,0 +1,3 @@
+INSERT INTO `tuple_member` (`id`, `create_time`, `update_time`, `organization_id`, `tuple_id`, `user_id`, `name`, `is_fake`) VALUES ('16', '2022-05-15 22:29:51', '2022-05-15 22:29:51', '6', '11', '1', '张三', 0);
+INSERT INTO `tuple_member` (`id`, `create_time`, `update_time`, `organization_id`, `tuple_id`, `user_id`, `name`, `is_fake`) VALUES ('17', '2022-05-15 22:30:12', '2022-05-15 22:30:12', '6', '11', '2', '李四', 0);
+INSERT INTO `tuple_member` (`id`, `create_time`, `update_time`, `organization_id`, `tuple_id`, `user_id`, `name`, `is_fake`) VALUES ('18', '2022-05-15 22:30:27', '2022-05-15 22:30:27', '6', '12', '4', '王五', 0);

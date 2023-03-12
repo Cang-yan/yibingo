@@ -1,0 +1,82 @@
+@startuml
+class com.yibingo.race.storage.cloud.OssStorageFactory {
+- {static} OssStorageConfig config
++ {static} OssStorageService build()
+}
+class com.yibingo.race.storage.cloud.MIniOStorageService {
+- MinioClient client
+- void init()
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+class com.yibingo.race.storage.cloud.localStorageService {
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+class com.yibingo.race.storage.cloud.QiniuCloudStorageService {
+- UploadManager uploadManager
+- Auth auth
+- Configuration cfg
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+class com.yibingo.race.storage.cloud.QcloudStorageService {
+- COSClient client
+- void init()
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+class com.yibingo.race.storage.cloud.UpyunStorageService {
+~ RestManager manager
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+abstract class com.yibingo.race.storage.cloud.OssStorageService {
++ OssStorageConfig config
++ {abstract}String upload(InputStream,String)
++ {abstract}String upload(byte[],String)
++ {abstract}String upload(MultipartFile,String)
++ InputStream download(String)
++ {abstract}void delete(String)
+}
+class com.yibingo.race.storage.cloud.AliyunOssStorageService {
+- OSS client
+- void init()
++ String upload(InputStream,String)
++ String upload(byte[],String)
++ String upload(MultipartFile,String)
++ void delete(String)
+}
+class com.yibingo.race.storage.cloud.OssStorageConfig {
+- OssTypeEnum ossType
+- String endpoint
+- String accessKeyId
+- String accessKeySecret
+- String bucketName
+- String domain
+- Integer qcloudAppId
+- String qcloudSecretId
+- String qcloudSecretKey
+- String qcloudRegion
+- String uploadFolder
+- String accessPathPattern
+}
+
+
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.MIniOStorageService
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.localStorageService
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.QiniuCloudStorageService
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.QcloudStorageService
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.UpyunStorageService
+com.yibingo.race.storage.cloud.OssStorageService <|-- com.yibingo.race.storage.cloud.AliyunOssStorageService
+@enduml

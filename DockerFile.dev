@@ -1,0 +1,15 @@
+#FROM openjdk:8u201-jdk-alpine3.9
+FROM yanmile/openjdk-8-jdk-alpine-font
+
+RUN mkdir -p /usr/local
+
+#应用构建成功后的jar文件被复制到镜像内
+ADD yibingo-starter/target/yibingo-starter-1.0-SNAPSHOT.jar /usr/local/yibingo-starter-1.0-SNAPSHOT.jar
+
+#字体
+#RUN apk add --update ttf-dejavu fontconfig
+
+# 运行容器后执行的第一条命令
+ENTRYPOINT ["java","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=31119","-jar","/usr/local/yibingo-starter-1.0-SNAPSHOT.jar","--spring.profiles.active=dev"]
+#暴露端口
+EXPOSE 8080
